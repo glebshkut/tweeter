@@ -1,0 +1,21 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  font-family: 'Bungee', cursive;
+  padding: 0px 1.5em;
+}
+
+nav .right-side-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 1.5em;
+}
