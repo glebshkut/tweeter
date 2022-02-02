@@ -3,9 +3,6 @@ $(() => {
   const $retweet = $('article footer div i.fa-retweet');
   const $heart = $('article footer div i.fa-heart');
   const $article = $('article');
-  // console.log($flag);
-  // console.log($retweet);
-  // console.log($heart);
 
   $article.hover(
     function () {
@@ -13,26 +10,26 @@ $(() => {
     }, function () {
         $(this).css('box-shadow', 'none');
     }
-);
+  );
   $flag.hover(
     function () {
         $(this).css('color', 'rgb(181 140 30)');
     }, function () {
         $(this).css('color', '#545149');
     }
-);
+  );
   $heart.hover(
     function () {
       $(this).css('color', 'rgb(181 140 30)');
   }, function () {
       $(this).css('color', '#545149');
   }
-);
+  );
   $retweet.hover(
     function () {
       $(this).css('color', 'rgb(181 140 30)');
   }, function () {
       $(this).css('color', '#545149');
   }
-);
+  );
 })
