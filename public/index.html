@@ -25,6 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
     <script src="/scripts/box-shadow.js"></script>
+    <script src="/scripts/client.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -52,7 +53,7 @@
 
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container" id="tweets-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="post" action="/tweets/">
@@ -67,7 +68,7 @@
       <article class="tweet">
         <header>
           <div>
-          <i class="fas fa-user"></i>
+          <img class="user-avatar" src="https://i.imgur.com/nlhLi3I.png">
           <span class="tweet-creator-name">Rhoda Jacobs</span>
           </div>
           <span class="tweet-creator-username">@MrsJacobs</span>

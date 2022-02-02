@@ -23,7 +23,9 @@ article header span {
   padding: 0.5em;
 }
 
-
+article header div img.user-avatar{
+  max-width: 50px; 
+}
 
 article footer {
   border-top: 2px solid black;
