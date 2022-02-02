@@ -6,6 +6,6 @@ header.page-header{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 120px;
+  margin-top: 90px;
   flex-direction: column;
 }

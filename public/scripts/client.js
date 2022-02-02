@@ -57,5 +57,39 @@ $(() => {
     }
   ];
   
-  renderTweets(data);
+
+  $('main#tweets-container form').on('submit', function (event) {
+    event.preventDefault();
+    console.log('the form has been submitted');
+
+    const data = $(this).serialize();
+
+    console.log('data', data);
+
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data
+    });
+
+  });
+
+
+  const loadtweets = function() {
+    $.ajax('/tweets', { 
+      method: 'GET' ,
+      dataType: 'json'})
+    .then(function (data) {
+      console.log(data);
+      renderTweets(data);
+    });
+
+
+
+  }
+  loadtweets();
+  // renderTweets(loadtweets());
+  
+
+
 });

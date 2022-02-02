@@ -5,6 +5,10 @@ article {
   padding: 0.4em;
 }
 
+article:hover {
+  box-shadow: 5px 5px;
+}
+
 
 article header {
   display: flex;
@@ -43,4 +47,6 @@ article footer div {
   font-size: 0.6em;
 }
 
-
+.fa-heart:hover , .fa-retweet:hover, .fa-flag:hover {
+  color: rgb(181 140 30);
+}

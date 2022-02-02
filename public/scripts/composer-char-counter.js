@@ -1,6 +1,6 @@
 $(() => {
   const $textArea = $('textarea#tweet-text');
-  $textArea.on('keyup', function() {
+  $textArea.on('input', function() {
     let value = 140 - $textArea.val().length;
     const $counter = $('section.new-tweet form div output.counter');
     $counter.val(value);
