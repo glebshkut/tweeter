@@ -35,11 +35,10 @@ $(() => {
 
   $('main#tweets-container form').on('submit', function (event) {
     event.preventDefault();
-    console.log('the form has been submitted');
+    console.log('The form has been submitted');
 
     const data = $(this).serialize();
-
-    console.log('data', data);
+    $('form').trigger('reset');
 
     $.ajax({
       method: 'POST',
@@ -55,7 +54,6 @@ $(() => {
       method: 'GET' ,
       dataType: 'json'})
     .then(function (data) {
-      console.log(data);
       renderTweets(data);
     });
 
