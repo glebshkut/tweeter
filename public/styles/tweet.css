@@ -1,0 +1,46 @@
+article {
+  width: 100%;
+  border: 2px solid black;
+  margin: 1em;
+  padding: 0.4em;
+}
+
+
+article header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article header div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+article header span {
+  padding: 0.5em;
+}
+
+article span.article-tweet-text {
+  padding-bottom: 100px;
+}
+
+article footer {
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+article footer span {
+  font-size: 0.6em;
+}
+
+article footer div {
+  font-size: 0.6em;
+}
+
+

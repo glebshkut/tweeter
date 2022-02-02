@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,7 +39,7 @@
       </div>
     </nav>
     <!-- Header -->
-    <header>
+    <header class="page-header">
       <div>
           <img src="/images/profile-hex.png">
       </div>
@@ -46,7 +47,7 @@
       <div>
           <h2>Your Name</h2>
       </div>
-  </header>
+    </header>
 
 
     <!-- Page-specific (main) content here -->
@@ -62,6 +63,26 @@
           </div>
         </form>
       </section>
+      <article class="tweet">
+        <header>
+          <div>
+          <i class="fas fa-user"></i>
+          <span class="tweet-creator-name">Rhoda Jacobs</span>
+          </div>
+          <span class="tweet-creator-username">@MrsJacobs</span>
+        </header>
+            <span>
+              Hello World!
+            </span>
+        <footer>
+          <span class="date">10 days ago</span>
+          <div class="footericons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
