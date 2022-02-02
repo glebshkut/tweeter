@@ -15,7 +15,7 @@ const createTweetElement = function(obj) {
               ${obj.content.text}
             </span>
         <footer>
-          <span class="date">${obj.created_at}</span>
+          <span class="date">${timeago.format(obj.created_at)}</span>
           <div class="footericons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -41,6 +41,5 @@ const tweetData = {
 
 const $tweet = createTweetElement(tweetData);
 
-console.log($tweet);
 $('#tweets-container').append($tweet);
 });
