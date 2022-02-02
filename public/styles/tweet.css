@@ -1,12 +1,13 @@
 #tweets-container div.tweets {
   width: 100%;
+  margin: 0.5em;
 }
 
 article {
   width: 100%;
   border: 2px solid black;
-  margin: 0.5em;
   padding: 0.4em;
+  margin-bottom: 0.5em;
 }
 
 article:hover {
