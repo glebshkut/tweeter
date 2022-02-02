@@ -2,7 +2,7 @@ $(() => {
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container div.tweets').append(createTweetElement(tweet));
     }
   }
 
@@ -44,7 +44,9 @@ $(() => {
       method: 'POST',
       url: '/tweets',
       data
-    });
+    }).then(() => {
+      loadtweets();
+    })
 
   });
 
@@ -54,13 +56,15 @@ $(() => {
       method: 'GET' ,
       dataType: 'json'})
     .then(function (data) {
+      $('main#tweets-container div.tweets').empty();
       renderTweets(data);
     });
 
 
 
   }
-  loadtweets();
 
+
+  loadtweets();
 
 });
