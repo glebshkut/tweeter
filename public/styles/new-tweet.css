@@ -22,7 +22,7 @@ main section.new-tweet form div button{
   color: #FFFFFF;
 }
 
-main section.new-tweet form div {
+main section.new-tweet form > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -38,6 +38,15 @@ main section.new-tweet form textarea {
   background-color: inherit;
   border-bottom: 2px solid #58554d;
   margin: 0px 0.5em;
-  margin-bottom: 0.5em;
   height: 30px;
+}
+
+main section.new-tweet form div.error-message {
+    font-family: 'Bungee', cursive;
+    font-family: 'Oswald', sans-serif;
+    color: #cc0033;
+    display: inline-block;
+    font-size: 0.7em;
+    line-height: 15px;
+    margin: 2px 0.7em 0;
 }

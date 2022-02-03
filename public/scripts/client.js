@@ -45,8 +45,21 @@ $(() => {
     event.preventDefault();
     console.log('The form has been submitted');
 
-
     const data = $(this).serialize();
+    const text = data.split('=')[1];
+
+    const $errorMessage = $('main section.new-tweet div.error-message');
+  
+
+    if (!text) {
+      return $errorMessage.text('Your tweet should include text!').slideDown(400, () => {});
+    } else if (text.length > 140) {
+      return $errorMessage.text('Your tweet can\'t include more than 140 characters').slideDown(400, () => {});
+    }
+    
+    
+    $errorMessage.text('');
+
     $('form').trigger('reset');
 
     $.ajax({
