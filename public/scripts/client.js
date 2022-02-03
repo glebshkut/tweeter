@@ -4,7 +4,7 @@ $(() => {
   const $newTweet = $('#tweets-container section.new-tweet');
 
   $arrowButton.on('click', function() {
-    if($newTweet.is(":visible")) {
+    if ($newTweet.is(":visible")) {
       $newTweet.slideUp("slow");
     } else {
       $newTweet.slideDown("slow");
@@ -15,8 +15,23 @@ $(() => {
 
   const $scrollTopButton = $('#scrollTopButton');
 
+  $(window).scroll(() => {
+    if ($(this).scrollTop() === 0) {
+      $scrollTopButton.slideUp("fast");
+      $arrowButton.slideDown("fast");
+    } else {
+      $scrollTopButton.slideDown("fast");
+      $arrowButton.slideUp("fast");
+      if ($newTweet.is(":visible")) {
+        $newTweet.slideUp("slow");
+      }
+    }
+  })
+
   $scrollTopButton.on('click', () => {
     $(window).scrollTop(0);
+    $newTweet.slideDown("slow");
+    $newTweet.find('textarea#tweet-text').focus();
   })
 
 
