@@ -32,11 +32,18 @@ $(() => {
     return $result;
   }
   
+  // SECURITY function
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   $('main#tweets-container form').on('submit', function (event) {
     event.preventDefault();
     console.log('The form has been submitted');
 
+    
     const data = $(this).serialize();
     $('form').trigger('reset');
 
