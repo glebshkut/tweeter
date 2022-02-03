@@ -1,12 +1,12 @@
 header.page-header {
-  height: 400px;
+  height: 17em;
   width: 100%;
   background-color: #ffb700;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 90px;
+  margin-top: 3.5em;
   flex-direction: column;
 }
 

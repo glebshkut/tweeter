@@ -1,0 +1,19 @@
+@media only screen and (min-width : 1024px) {
+  header.page-header {
+    width: 25%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 5em;
+    height: 17em;
+  }
+
+  main#tweets-container {
+    width: 70%;
+    padding: 5%;
+    margin-top: 3em;
+  }
+
+  main section.new-tweet form {
+    margin-top: 1em;
+  }
+}
