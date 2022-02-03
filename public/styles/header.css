@@ -1,4 +1,4 @@
-header.page-header{
+header.page-header {
   height: 400px;
   width: 100%;
   background-color: #ffb700;
@@ -8,4 +8,8 @@ header.page-header{
   justify-content: flex-end;
   margin-top: 90px;
   flex-direction: column;
+}
+
+header.page-header div h2.client-name {
+  color: #FFFFFF;
 }
