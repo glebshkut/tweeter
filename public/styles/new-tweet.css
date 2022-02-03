@@ -38,7 +38,8 @@ main section.new-tweet form textarea {
   background-color: inherit;
   border-bottom: 2px solid #58554d;
   margin: 0px 0.5em;
-  height: 30px;
+  /* height: 30px; */
+  display: block;
 }
 
 main section.new-tweet form div.error-message {

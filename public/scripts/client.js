@@ -46,11 +46,10 @@ $(() => {
     console.log('The form has been submitted');
 
     const data = $(this).serialize();
-    const text = data.split('=')[1];
+    const text = $('textarea#tweet-text').val();
 
     const $errorMessage = $('main section.new-tweet div.error-message');
   
-
     if (!text) {
       return $errorMessage.text('Your tweet should include text!').slideDown(400, () => {});
     } else if (text.length > 140) {
