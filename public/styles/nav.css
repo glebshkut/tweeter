@@ -22,3 +22,11 @@ nav .right-side-nav {
   align-items: center;
   padding: 0px 1.5em;
 }
+
+nav i.fa-angle-double-down {
+  color: red;
+}
+
+nav div.right-side-nav:hover {
+  color: rgb(30, 210, 81);
+}

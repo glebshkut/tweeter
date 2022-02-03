@@ -1,5 +1,20 @@
 $(() => {
 
+
+
+  const $arrowButton = $('nav div.right-side-nav');
+  const $newTweet = $('#tweets-container section.new-tweet');
+
+  $arrowButton.on('click', function() {
+    if($newTweet.is(":visible")) {
+      $newTweet.slideUp("slow");
+    } else {
+      $newTweet.slideDown("slow");
+      $newTweet.find('textarea#tweet-text').focus();
+    }
+  })
+
+
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       $('#tweets-container div.tweets').prepend(createTweetElement(tweet));
