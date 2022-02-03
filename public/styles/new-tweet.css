@@ -21,6 +21,7 @@ main section.new-tweet form label{
 main section.new-tweet form div button{
   background-color: #4056A1;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 main section.new-tweet form > div {

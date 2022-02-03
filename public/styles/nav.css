@@ -6,9 +6,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed;
+  top: 0;
+  width: 100%; 
 }
 
 #logo {
@@ -29,4 +29,5 @@ nav i.fa-angle-double-down {
 
 nav div.right-side-nav:hover {
   color: rgb(30, 210, 81);
+  cursor: pointer;
 }

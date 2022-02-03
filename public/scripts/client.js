@@ -1,7 +1,5 @@
 $(() => {
 
-
-
   const $arrowButton = $('nav div.right-side-nav');
   const $newTweet = $('#tweets-container section.new-tweet');
 
@@ -13,6 +11,15 @@ $(() => {
       $newTweet.find('textarea#tweet-text').focus();
     }
   })
+
+
+  const $scrollTopButton = $('#scrollTopButton');
+
+  $scrollTopButton.on('click', () => {
+    $(window).scrollTop(0);
+  })
+
+
 
 
   const renderTweets = function(tweets) {

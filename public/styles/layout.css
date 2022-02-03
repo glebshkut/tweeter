@@ -31,3 +31,15 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
+
+#scrollTopButton {
+  position: fixed;
+  bottom: 3rem;
+  right: 0.15rem;
+  z-index: 99;
+  font-size: 4rem;
+  color: red;
+  outline: none;
+  cursor: pointer;
+}

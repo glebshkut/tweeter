@@ -54,6 +54,7 @@ article footer div {
 
 .fa-heart:hover , .fa-retweet:hover, .fa-flag:hover {
   color: rgb(181 140 30);
+  cursor: pointer;
 }
 
 article span.tweet-content-text {
