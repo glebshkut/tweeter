@@ -6,6 +6,13 @@ $(() => {
     }
   }
 
+   // SECURITY function
+   const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweet) {
     const $result = `
     <article class="tweet">
@@ -17,7 +24,7 @@ $(() => {
             <span class="tweet-creator-username">${tweet.user.handle}</span>
           </header>
               <span>
-                ${tweet.content.text}
+                ${escape(tweet.content.text)}
               </span>
           <footer>
             <span class="date">${timeago.format(tweet.created_at)}</span>
@@ -32,18 +39,13 @@ $(() => {
     return $result;
   }
   
-  // SECURITY function
-  const escape = function (str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+ 
 
   $('main#tweets-container form').on('submit', function (event) {
     event.preventDefault();
     console.log('The form has been submitted');
 
-    
+
     const data = $(this).serialize();
     $('form').trigger('reset');
 
