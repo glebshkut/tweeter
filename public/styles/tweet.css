@@ -55,3 +55,9 @@ article footer div {
 .fa-heart:hover , .fa-retweet:hover, .fa-flag:hover {
   color: rgb(181 140 30);
 }
+
+article span.tweet-content-text {
+  display: block;
+  width: 100%;
+  word-break: break-all;
+}

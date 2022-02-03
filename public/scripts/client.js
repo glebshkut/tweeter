@@ -23,7 +23,7 @@ $(() => {
             </div>
             <span class="tweet-creator-username">${tweet.user.handle}</span>
           </header>
-              <span>
+              <span class="tweet-content-text">
                 ${escape(tweet.content.text)}
               </span>
           <footer>
