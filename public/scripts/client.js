@@ -3,10 +3,13 @@ $(() => {
   const $arrowButton = $('nav div.right-side-nav');
   const $newTweet = $('#tweets-container section.new-tweet');
 
+  // clicking on new-tweet button/arrow from nav menu
   $arrowButton.on('click', function() {
+    // if form is visible, hide it
     if ($newTweet.is(":visible")) {
       $newTweet.slideUp("slow");
     } else {
+      // if invisible, show it and focus on input field
       $newTweet.slideDown("slow");
       $newTweet.find('textarea#tweet-text').focus();
     }
@@ -14,29 +17,39 @@ $(() => {
 
 
   const $scrollTopButton = $('#scrollTopButton');
-
+  // listen for any scrolling
   $(window).scroll(() => {
+    // if it's top of the page
     if ($(this).scrollTop() === 0) {
+      // then hide scroll toTheTopButton and display arrowButton
       $scrollTopButton.slideUp("fast");
       $arrowButton.slideDown("fast");
     } else {
+      // if not top of the page:
+      
+      // then display toTheTopButton and hide arrowButton
       $scrollTopButton.slideDown("fast");
       $arrowButton.slideUp("fast");
+
+      // if tweet form is visible, hide it
       if ($newTweet.is(":visible")) {
         $newTweet.slideUp("slow");
       }
     }
-  })
+  });
 
+  // clicking GoToTop button
   $scrollTopButton.on('click', () => {
     $(window).scrollTop(0);
+    // displaying new-tweet form
     $newTweet.slideDown("slow");
+    // focusing on input field
     $newTweet.find('textarea#tweet-text').focus();
-  })
+  });
 
 
 
-
+  // looping through array of tweets
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       $('#tweets-container div.tweets').prepend(createTweetElement(tweet));
@@ -80,8 +93,8 @@ $(() => {
 
   $('main#tweets-container form').on('submit', function (event) {
     event.preventDefault();
-    console.log('The form has been submitted');
 
+    // turning value into query string
     const data = $(this).serialize();
     const text = $('textarea#tweet-text').val();
 
@@ -93,11 +106,11 @@ $(() => {
       return $errorMessage.text('Your tweet can\'t include more than 140 characters').slideDown(400, () => {});
     }
     
-    
+    // clearing error message
     $errorMessage.text('');
-
+    // clering form
     $('form').trigger('reset');
-
+    // making post request to 'database'
     $.ajax({
       method: 'POST',
       url: '/tweets',
@@ -108,7 +121,7 @@ $(() => {
 
   });
 
-
+  // loading tweets from 'database'
   const loadtweets = function() {
     $.ajax('/tweets', { 
       method: 'GET' ,
