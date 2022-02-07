@@ -13,9 +13,6 @@ $(() => {
     }
   });
 
-
-
-
   const $tweetText = $('#tweet-text');
 
   const $errorMessage = $('main section.new-tweet div.error-message');
@@ -24,6 +21,5 @@ $(() => {
       if ($tweetText.val() && $tweetText.val().length <= 140) {
         $errorMessage.text('');
       }
-
     });
 });

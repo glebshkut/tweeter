@@ -1,55 +1,5 @@
 $(() => {
 
-  const $arrowButton = $('nav div.right-side-nav');
-  const $newTweet = $('#tweets-container section.new-tweet');
-
-  // clicking on new-tweet button/arrow from nav menu
-  $arrowButton.on('click', function() {
-    // if form is visible, hide it
-    if ($newTweet.is(":visible")) {
-      $newTweet.slideUp("slow");
-    } else {
-      // if invisible, show it and focus on input field
-      $newTweet.slideDown("slow");
-      $newTweet.find('textarea#tweet-text').focus();
-    }
-  })
-
-
-  const $scrollTopButton = $('#scrollTopButton');
-  // listen for any scrolling
-  $(window).scroll(() => {
-    // if it's top of the page
-    if ($(this).scrollTop() === 0) {
-      // then hide scroll toTheTopButton and display arrowButton
-      $scrollTopButton.slideUp("fast");
-      $arrowButton.slideDown("fast");
-    } else {
-      // if not top of the page:
-      
-      // then display toTheTopButton and hide arrowButton
-      $scrollTopButton.slideDown("fast");
-      $arrowButton.slideUp("fast");
-
-      // if tweet form is visible, hide it
-      if ($newTweet.is(":visible")) {
-        $newTweet.slideUp("slow");
-      }
-    }
-  });
-
-  // clicking GoToTop button
-  $scrollTopButton.on('click', () => {
-    $(window).scrollTop(0);
-    // displaying new-tweet form
-    $newTweet.slideDown("slow");
-    // focusing on input field
-    $newTweet.find('textarea#tweet-text').focus();
-  });
-
-
-
-  // looping through array of tweets
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       $('#tweets-container div.tweets').prepend(createTweetElement(tweet));
@@ -88,8 +38,6 @@ $(() => {
   `;
     return $result;
   }
-  
- 
 
   $('main#tweets-container form').on('submit', function (event) {
     event.preventDefault();
@@ -116,25 +64,26 @@ $(() => {
       url: '/tweets',
       data
     }).then(() => {
-      loadtweets();
+      const oneTweet = true;
+      loadtweets(oneTweet);
     })
-
   });
 
   // loading tweets from 'database'
-  const loadtweets = function() {
+  const loadtweets = function(oneTweet) {
     $.ajax('/tweets', { 
       method: 'GET' ,
       dataType: 'json'})
     .then(function (data) {
-      $('main#tweets-container div.tweets').empty();
-      renderTweets(data);
+      // if there's only one tweet passed, then we add only this one
+      if (oneTweet) {
+        renderTweets([data[data.length - 1]]);
+      } else {
+        $('main#tweets-container div.tweets').empty();
+        renderTweets(data);
+      }
     });
-
-
-
   }
-
 
   loadtweets();
 
